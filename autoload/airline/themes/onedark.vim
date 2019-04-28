@@ -13,7 +13,7 @@ function! airline#themes#onedark#refresh()
   let s:term_purple = 5
   let s:term_white = 7
   let s:term_black = 235
-  let s:term_grey = 0
+  let s:term_grey = 235
 
   let g:airline#themes#onedark#palette = {}
 
@@ -30,9 +30,6 @@ function! airline#themes#onedark#refresh()
   let g:airline#themes#onedark#palette.normal_modified = {
         \ 'airline_c': [ group[0], '', group[2], '', '' ]
         \ }
-
-  " try to get this working later
-  "let g:airline#themes#onedark#palette.tabline.airline_tabmod_unsel = [ '#98C379', '#282C34', s:term_green, s:term_grey ]
 
   let s:I1 = [ '#282C34', '#61AFEF', s:term_black, s:term_blue ]
   let s:I2 = s:N2
@@ -59,6 +56,15 @@ function! airline#themes#onedark#refresh()
   let g:airline#themes#onedark#palette.inactive_modified = {
         \ 'airline_c': [ group[0], '', group[2], '', '' ]
         \ }
+
+  " Extra tabline colors
+  let g:airline#themes#onedark#palette.tabline = {}
+  let g:airline#themes#onedark#palette.tabline.airline_tab       = s:N3
+  let g:airline#themes#onedark#palette.tabline.airline_tab_right = s:N3
+  let g:airline#themes#onedark#palette.tabline.airline_tab_unsel       = s:N2
+  let g:airline#themes#onedark#palette.tabline.airline_tab_unsel_right = s:N2
+  let g:airline#themes#onedark#palette.tabline.airline_tabmod_unsel       = s:I3
+  let g:airline#themes#onedark#palette.tabline.airline_tabmod_unsel_right = s:I3
 
   " Warning/Error styling code from vim-airline's ["base16" theme](https://github.com/vim-airline/vim-airline-themes/blob/master/autoload/airline/themes/base16.vim)
 
